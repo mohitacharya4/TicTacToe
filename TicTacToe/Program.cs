@@ -47,52 +47,6 @@
         }
 
         /// <summary>
-        /// Is a valid input
-        /// </summary>
-        /// <param name="player"></param>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        private static bool IsValidInput(int player, ref int input)
-        {
-            bool inputCorrect;
-            Console.Write("\n Player {0}: Choose your field! ", player);
-            try
-            {
-                input = Convert.ToInt32(Console.ReadLine());
-            }
-            catch
-            {
-                Console.WriteLine("Please enter a number!");
-            }
-
-            if ((input == 1) && (playField[0, 0] == '1'))
-                inputCorrect = true;
-            else if ((input == 2) && (playField[0, 1] == '2'))
-                inputCorrect = true;
-            else if ((input == 3) && (playField[0, 2] == '3'))
-                inputCorrect = true;
-            else if ((input == 4) && (playField[1, 0] == '4'))
-                inputCorrect = true;
-            else if ((input == 5) && (playField[1, 1] == '5'))
-                inputCorrect = true;
-            else if ((input == 6) && (playField[1, 2] == '6'))
-                inputCorrect = true;
-            else if ((input == 7) && (playField[2, 0] == '7'))
-                inputCorrect = true;
-            else if ((input == 8) && (playField[2, 1] == '8'))
-                inputCorrect = true;
-            else if ((input == 9) && (playField[2, 2] == '9'))
-                inputCorrect = true;
-            else
-            {
-                Console.WriteLine("\nIncorrect input! Please use another field!");
-                inputCorrect = false;
-            }
-
-            return inputCorrect;
-        }
-
-        /// <summary>
         /// Set X or O in the grid based on Player and Input
         /// </summary>
         /// <param name="player"></param>
@@ -206,9 +160,51 @@
             SetField();
         }
 
+        /// <summary>
+        /// Is a valid input
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        private static bool IsValidInput(int player, ref int input)
+        {
+            bool inputCorrect;
+            Console.Write("\n Player {0}: Choose your field! ", player);
+            try
+            {
+                input = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a number!");
+            }
 
+            if ((input == 1) && (playField[0, 0] == '1'))
+                inputCorrect = true;
+            else if ((input == 2) && (playField[0, 1] == '2'))
+                inputCorrect = true;
+            else if ((input == 3) && (playField[0, 2] == '3'))
+                inputCorrect = true;
+            else if ((input == 4) && (playField[1, 0] == '4'))
+                inputCorrect = true;
+            else if ((input == 5) && (playField[1, 1] == '5'))
+                inputCorrect = true;
+            else if ((input == 6) && (playField[1, 2] == '6'))
+                inputCorrect = true;
+            else if ((input == 7) && (playField[2, 0] == '7'))
+                inputCorrect = true;
+            else if ((input == 8) && (playField[2, 1] == '8'))
+                inputCorrect = true;
+            else if ((input == 9) && (playField[2, 2] == '9'))
+                inputCorrect = true;
+            else
+            {
+                Console.WriteLine("\nIncorrect input! Please use another field!");
+                inputCorrect = false;
+            }
 
-
+            return inputCorrect;
+        }
 
     }
 }
